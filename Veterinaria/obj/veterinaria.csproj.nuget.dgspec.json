@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/veterinaria.csproj": {}
+    "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/Veterinaria/veterinaria.csproj": {}
   },
   "projects": {
-    "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/veterinaria.csproj": {
+    "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/Veterinaria/veterinaria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/veterinaria.csproj",
+        "projectUniqueName": "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/Veterinaria/veterinaria.csproj",
         "projectName": "veterinaria",
-        "projectPath": "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/veterinaria.csproj",
+        "projectPath": "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/Veterinaria/veterinaria.csproj",
         "packagesPath": "/Users/alejandro/.nuget/packages/",
-        "outputPath": "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/obj/",
+        "outputPath": "/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/Veterinaria/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/alejandro/.nuget/NuGet/NuGet.Config"

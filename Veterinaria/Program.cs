@@ -1,12 +1,19 @@
 ﻿using System;
 
-namespace veterinaria
+namespace Veterinaria
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DoJob();
         }
+
+        static void DoJob ()
+        {
+            var worker = new Worker();
+            worker.work01();
+        }
+
     }
 }
