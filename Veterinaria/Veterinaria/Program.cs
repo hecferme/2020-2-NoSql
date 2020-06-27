@@ -10,8 +10,14 @@ namespace Veterinaria
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world!");
-            Console.ReadLine();
+            DoJob();
         }
+
+        static void DoJob ()
+        {
+            var elTrabajador = new Trabajador();
+            elTrabajador.Trabajo01();
+        }
+
     }
 }
