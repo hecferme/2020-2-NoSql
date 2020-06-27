@@ -1,0 +1,12 @@
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/bin/Debug/netcoreapp3.1/veterinaria.deps.json
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/bin/Debug/netcoreapp3.1/veterinaria.runtimeconfig.json
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/bin/Debug/netcoreapp3.1/veterinaria.runtimeconfig.dev.json
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/bin/Debug/netcoreapp3.1/veterinaria.dll
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/bin/Debug/netcoreapp3.1/veterinaria.pdb
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/obj/Debug/netcoreapp3.1/veterinaria.csprojAssemblyReference.cache
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/obj/Debug/netcoreapp3.1/veterinaria.AssemblyInfoInputs.cache
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/obj/Debug/netcoreapp3.1/veterinaria.AssemblyInfo.cs
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/obj/Debug/netcoreapp3.1/veterinaria.csproj.CoreCompileInputs.cache
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/obj/Debug/netcoreapp3.1/veterinaria.dll
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/obj/Debug/netcoreapp3.1/veterinaria.pdb
+/Users/alejandro/Documents/Software Projects/Fidelitas/NoSQL/2020-2-NoSql/veterinaria/obj/Debug/netcoreapp3.1/veterinaria.genruntimeconfig.cache
