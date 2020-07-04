@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Veterinaria.Model;
 
 namespace Veterinaria
 {
@@ -22,12 +23,49 @@ namespace Veterinaria
                     case "1":
                         ListeLasColecciones();
                         break;
+                    case "2":
+                        ListeTodosLosAnimalitos();
+                        break;
+                    case "3":
+                        ListeAnimalitosPorNombre();
+                        break;
                     default:
                         break;
                 }
             }
         }
 
+        private void ListeTodosLosAnimalitos()
+        {
+            var client = new Veterinaria.AccesoADatos.Conexion();
+            var laListaDeAnimalitos = client.ListarTodosLosAnimalitos();
+            ImprimirListadoDeAnimalitos(laListaDeAnimalitos);
+        }
+
+        private void ImprimirListadoDeAnimalitos(IList<Animalito> laListaDeAnimalitos)
+        {
+            if (laListaDeAnimalitos.Count > 0)
+            {
+                Console.WriteLine("Lista de todos los animalitos:");
+                foreach (var animalito in laListaDeAnimalitos)
+                {
+                    Console.WriteLine(string.Format("Id: {2}; Nombre: {0}; Tipo: {1}", animalito.Nombre, animalito.Tipo, animalito.AnimalitoId.ToString()));
+                }
+            }
+            else
+                Console.WriteLine("No se encontró ningún animalito.");
+       }
+
+        private void ListeAnimalitosPorNombre()
+        {
+            Console.Write("Digite el nombre del animalito: ");
+            var elNombreDelAnimalito = Console.ReadLine();
+            var client = new Veterinaria.AccesoADatos.Conexion();
+            var laListaDeAnimalitos = client.ListarAnimalitosPorNombre(elNombreDelAnimalito);
+            ImprimirListadoDeAnimalitos(laListaDeAnimalitos);
+        }
+
+        // comentarios
         private void ListeLasColecciones()
         {
             var client = new Veterinaria.AccesoADatos.Conexion();
@@ -45,7 +83,8 @@ namespace Veterinaria
         {
             Console.WriteLine("Menu Principal");
             Console.WriteLine("1. Listar las colecciones.");
-            Console.WriteLine("2. Listar los animalitos.");
+            Console.WriteLine("2. Listar todos los animalitos.");
+            Console.WriteLine("3. Listar los animalitos por nombre.");
             Console.WriteLine("X.  Salir");
         }
 
