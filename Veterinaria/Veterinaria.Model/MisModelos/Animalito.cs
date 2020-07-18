@@ -18,7 +18,11 @@ namespace Veterinaria.Model
         public string Nombre { get; set; }
         [BsonElement("tipo")]
         public string Tipo { get; set; }
+        [BsonElement("fechaNacimiento")]
+        public DateTime FechaNacimiento { get; set; }
         [BsonExtraElements] 
         public BsonDocument Metadata { get; set; }
+        [BsonElement("propietario")]
+        public Propietario ElPropietario { get; set; }
     }
 }

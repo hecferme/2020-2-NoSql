@@ -75,7 +75,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animalito.cs" />
+    <Compile Include="MisModelos\Animalito.cs" />
+    <Compile Include="MisModelos\ContactoTelefonico.cs" />
+    <Compile Include="MisModelos\Propietario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
