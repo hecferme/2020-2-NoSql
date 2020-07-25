@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Veterinaria.Model;
+using Veterinaria.Model.MisModelos;
 
 namespace Veterinaria
 {
@@ -29,10 +30,35 @@ namespace Veterinaria
                     case "3":
                         ListeAnimalitosPorNombre();
                         break;
+                    case "7":
+                        SubirFotoDelAnimalito();
+                        break;
                     default:
                         break;
                 }
             }
+        }
+
+        private void SubirFotoDelAnimalito()
+        {
+            Console.Write("Digite el nombre del archivo con la foto: ");
+            var elNombreDeLaFoto = Console.ReadLine();
+            Console.Write("Digite la descripción de la foto: ");
+            var laDescripcicion = Console.ReadLine();
+            Console.Write("Digite la fecha y hora de la foto: ");
+            var laFechaYHora = Console.ReadLine();
+            var laMetadata = new MetadataDeFotos();
+            laMetadata.Descripcion = laDescripcicion;
+            laMetadata.FechaYHora = laFechaYHora;
+            var client = new Veterinaria.AccesoADatos.Fotos();
+            var elIdDeLaFoto = client.CargarArchivoPorMedioDeStream(elNombreDeLaFoto, laMetadata);
+            if (elIdDeLaFoto != null)
+                Console.WriteLine(string.Format("El id de la foto es {0}",
+                    elIdDeLaFoto.ToString()));
+            else
+                Console.WriteLine("Ocurrió un error al subir el archivo");
+            //           ImprimirListadoDeAnimalitos(elIdDeLaFoto);
+            //5f1b9a30f107ec1e64a72ef6
         }
 
         private void ListeTodosLosAnimalitos()
@@ -85,6 +111,7 @@ namespace Veterinaria
             Console.WriteLine("1. Listar las colecciones.");
             Console.WriteLine("2. Listar todos los animalitos.");
             Console.WriteLine("3. Listar los animalitos por nombre.");
+            Console.WriteLine("7. Subir foto del animalito.");
             Console.WriteLine("X.  Salir");
         }
 

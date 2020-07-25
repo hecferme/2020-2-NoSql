@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="MisModelos\Animalito.cs" />
     <Compile Include="MisModelos\ContactoTelefonico.cs" />
+    <Compile Include="MisModelos\Fotos.cs" />
     <Compile Include="MisModelos\Propietario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
