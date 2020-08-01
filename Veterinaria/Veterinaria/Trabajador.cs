@@ -33,10 +33,44 @@ namespace Veterinaria
                     case "7":
                         SubirFotoDelAnimalito();
                         break;
+                    case "8":
+                        InsertarAnimalito();
+                        break;
                     default:
                         break;
                 }
             }
+        }
+
+        private void InsertarAnimalito()
+        {
+            Console.Write("Digite el nombre del animalito: ");
+            var elNombre = Console.ReadLine();
+            Console.Write("Digite el tipo del animalito: ");
+            var elTipo = Console.ReadLine();
+            Console.Write("Digite la fecha de nacimiento del animalito: ");
+            var laFechaDeNacimiento = Console.ReadLine();
+            Console.Write("Digite el nombre del propietario del animalito: ");
+            var elPropietario = Console.ReadLine();
+            Console.Write("Digite el email del propietario del animalito: ");
+            var elEmailDelPropietario = Console.ReadLine();
+            Console.Write("Digite el teléfono del propietario del animalito: ");
+            var elTelefonoDelPropietario = Console.ReadLine();
+
+            var elAnimalito = new Animalito();
+            elAnimalito.Nombre = elNombre;
+            elAnimalito.Tipo = elTipo;
+            elAnimalito.FechaNacimiento = new DateTime();
+            elAnimalito.ElPropietario = new Propietario();
+            elAnimalito.ElPropietario.Nombre = elPropietario;
+            elAnimalito.ElPropietario.DireccionElectronica = elEmailDelPropietario;
+            elAnimalito.ElPropietario.LosContactos = new List<ContactoTelefonico>();
+            var elObjetoTelefono = new ContactoTelefonico();
+            elObjetoTelefono.Proveedor = "Claro";
+            elObjetoTelefono.NumeroTelefonico = int.Parse(elTelefonoDelPropietario);
+            elAnimalito.ElPropietario.LosContactos.Add(elObjetoTelefono);
+            var client = new Veterinaria.AccesoADatos.Conexion();
+            client.InsertarAnimalito(elAnimalito);
         }
 
         private void SubirFotoDelAnimalito()
@@ -112,6 +146,7 @@ namespace Veterinaria
             Console.WriteLine("2. Listar todos los animalitos.");
             Console.WriteLine("3. Listar los animalitos por nombre.");
             Console.WriteLine("7. Subir foto del animalito.");
+            Console.WriteLine("8. Insertar un animalito.");
             Console.WriteLine("X.  Salir");
         }
 

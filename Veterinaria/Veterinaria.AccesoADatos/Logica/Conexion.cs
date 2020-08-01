@@ -44,5 +44,19 @@ namespace Veterinaria.AccesoADatos
             return elResultado;
         }
 
+        public void InsertarAnimalito (Animalito elAnimalito)
+        {
+            var laBaseDeDatos = ConectarConBaseDeDatos();
+            var collection = laBaseDeDatos.GetCollection<Animalito>("animalitos");
+            collection.InsertOne(elAnimalito);
+        }
+        public void BorrarAnimalito(string elNombreDelAnimalito)
+        {
+            var laBaseDeDatos = ConectarConBaseDeDatos();
+            var collection = laBaseDeDatos.GetCollection<Animalito>("animalitos");
+            var expresssionFilter = Builders<Animalito>.Filter.Regex(x => x.Nombre, elNombreDelAnimalito);
+            collection.DeleteOne(expresssionFilter);
+        }
+
     }
 }
