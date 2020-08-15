@@ -65,6 +65,7 @@ namespace Veterinaria.AccesoADatos
             var collection = laBaseDeDatos.GetCollection<Animalito>("animalitos");
             var filter = Builders<Animalito>.Filter.Eq("_id", elIdDelAnimalito);
             var update = Builders<Animalito>.Update.Set("nombre", elNuevoNombre);
+            // update.Set("propietario", "Hector");
             collection.UpdateOne(filter, update);
         }
 
