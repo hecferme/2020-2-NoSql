@@ -36,6 +36,9 @@ namespace Veterinaria
                     case "8":
                         InsertarAnimalito();
                         break;
+                    case "9":
+                        CambieElNombreDelAnimalito();
+                        break;
                     default:
                         break;
                 }
@@ -107,14 +110,37 @@ namespace Veterinaria
             if (laListaDeAnimalitos.Count > 0)
             {
                 Console.WriteLine("Lista de todos los animalitos:");
+                var contador = 0;
                 foreach (var animalito in laListaDeAnimalitos)
                 {
-                    Console.WriteLine(string.Format("Id: {2}; Nombre: {0}; Tipo: {1}", animalito.Nombre, animalito.Tipo, animalito.AnimalitoId.ToString()));
+                    Console.WriteLine(string.Format("Animalito número {3}: Id: {2}; Nombre: {0}; Tipo: {1}", animalito.Nombre, animalito.Tipo, animalito.AnimalitoId.ToString(), contador++.ToString()));
                 }
             }
             else
                 Console.WriteLine("No se encontró ningún animalito.");
        }
+
+        private void CambieElNombreDelAnimalito()
+        {
+            Console.Write("Digite el nombre del animalito: ");
+            var elNombreDelAnimalito = Console.ReadLine();
+            var client = new Veterinaria.AccesoADatos.Conexion();
+            var laListaDeAnimalitos = client.ListarAnimalitosPorNombre(elNombreDelAnimalito);
+            ImprimirListadoDeAnimalitos(laListaDeAnimalitos);
+            Console.Write("Seleccione el número animalito cuyo nombre desea cambiar: ");
+            var elAnimalitoSeleccionado = Console.ReadLine();
+            var elNumeroDeAnimalito = 0;
+            if (int.TryParse(elAnimalitoSeleccionado, out elNumeroDeAnimalito))
+            {
+                if (elNumeroDeAnimalito >= 0 && elNumeroDeAnimalito < laListaDeAnimalitos.Count)
+                {
+                    var elRegistroDelAnimalito = laListaDeAnimalitos[elNumeroDeAnimalito];
+                    Console.Write(string.Format("El nombre actual del animalito es [{0}]. Digite el nuevo nombre: ", elRegistroDelAnimalito.Nombre));
+                    var elNuevoNombreDelAnimalito = Console.ReadLine();
+                    client.ActualizarNombreDeAnimalito(elRegistroDelAnimalito.AnimalitoId, elNuevoNombreDelAnimalito);
+                }
+            }
+        }
 
         private void ListeAnimalitosPorNombre()
         {
@@ -147,6 +173,7 @@ namespace Veterinaria
             Console.WriteLine("3. Listar los animalitos por nombre.");
             Console.WriteLine("7. Subir foto del animalito.");
             Console.WriteLine("8. Insertar un animalito.");
+            Console.WriteLine("9. Cambiar nombre de un animalito.");
             Console.WriteLine("X.  Salir");
         }
 

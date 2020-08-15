@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Veterinaria.Model;
@@ -56,6 +57,15 @@ namespace Veterinaria.AccesoADatos
             var collection = laBaseDeDatos.GetCollection<Animalito>("animalitos");
             var expresssionFilter = Builders<Animalito>.Filter.Regex(x => x.Nombre, elNombreDelAnimalito);
             collection.DeleteOne(expresssionFilter);
+        }
+
+        public void ActualizarNombreDeAnimalito (ObjectId elIdDelAnimalito, string elNuevoNombre)
+        {
+            var laBaseDeDatos = ConectarConBaseDeDatos();
+            var collection = laBaseDeDatos.GetCollection<Animalito>("animalitos");
+            var filter = Builders<Animalito>.Filter.Eq("_id", elIdDelAnimalito);
+            var update = Builders<Animalito>.Update.Set("nombre", elNuevoNombre);
+            collection.UpdateOne(filter, update);
         }
 
     }
