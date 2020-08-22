@@ -12,6 +12,8 @@ namespace Veterinaria
 {
     public class Trabajador 
     {
+        private string elresultado;
+
         public void Trabajo01()
         {
             var laOpcion = string.Empty;
@@ -113,12 +115,25 @@ namespace Veterinaria
                 var contador = 0;
                 foreach (var animalito in laListaDeAnimalitos)
                 {
-                    Console.WriteLine(string.Format("Animalito número {3}: Id: {2}; Nombre: {0}; Tipo: {1}", animalito.Nombre, animalito.Tipo, animalito.AnimalitoId.ToString(), contador++.ToString()));
+                    Console.WriteLine(string.Format("Animalito número {3}: Id: {2}; Nombre: {0}; Tipo: {1}; Contactos del propietario: {4}", animalito.Nombre, animalito.Tipo, animalito.AnimalitoId.ToString(), contador++.ToString(), ObtenerListaContactos(animalito.ElPropietario)));
                 }
             }
             else
                 Console.WriteLine("No se encontró ningún animalito.");
        }
+
+        private string ObtenerListaContactos(Propietario elPropietario)
+        {
+            var elResultado = string.Empty;
+            if (elPropietario != null && elPropietario.LosContactos != null)
+            {
+                foreach (var contacto in elPropietario.LosContactos)
+                {
+                    elResultado += string.Concat(string.Format("Proveedor: {0}; Numero: {1}", contacto.Proveedor, contacto.NumeroTelefonico.ToString()));
+                }
+            }
+            return elResultado;
+        }
 
         private void CambieElNombreDelAnimalito()
         {
